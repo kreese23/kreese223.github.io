@@ -7,7 +7,7 @@
 
   body{
     font-family: 'Playfair Display', serif;
-    background-image:url("assets/IMG_8075.JPG");
+    background-image:url("assets/IMG_1837.jpg");
 
   }
 
@@ -34,13 +34,13 @@
   }
   
   /* step three - build your mobile grid, what becomes active when the pixels are 800px or less */
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 800px) {
   
       .container{
           background-color: rgba(253, 250, 250, 0.952);
           width: 85%;
           display: grid;
-          grid-gap: 20px;
+          grid-gap: 15px;
           /* grid is only one column, keep this way */
           grid-template-columns: 1fr;
           /* you can enter values, or auto will adjust the box sizes based on content */
@@ -65,7 +65,7 @@
     }
 
 nav a{
-    font-size: 3em;
+    font-size: 1em;
     padding: 29px;
     }
     /* unvisited link */
@@ -98,13 +98,13 @@ a:link {
 
   header {
       grid-area: h;
-      padding-top: 30px;
+      padding-top: 10px;
     
   }
   
   .education {
       grid-area: e;
-      padding-top: 30px;
+      padding-top: 12px;
   }
   
   .experience {
@@ -113,47 +113,48 @@ a:link {
 
   .awards {
       grid-area: a;
-      padding-right: 100px;
+      padding-right: 10px;
   }
 
   .skills {
       grid-area: s;
-      padding-bottom: 200px;
+      padding-bottom: 50px;
   }
   
   h1{
       font-family: 'Chivo', sans-serif;;
-      font-size: 120pt;
+      font-size: 20pt;
   }
 
   h2{
       font-family: 'Chivo', sans-serif;
-      font-size: 100pt;
+      font-size: 20pt;
   }
 
   h3{
       font-family: 'Arimo';
-      font-size: 50pt;
+      font-size: 15pt;
   }
 
   h4{
       font-family: 'Chivo' , sans-serif;
-      font-size: 45pt;
+      font-size: 15pt;
   }
 
   h5{
-      font-size: 25pt;
+      font-size: 10pt;
       font-family: 'Chivo' , sans-serif;
   }
 
   .p{
       font-family: 'Arimo';
-      font-size: 50pt;
+      font-size: 12pt;
   }
 
   li{
       font-family: 'Arimo';
-      font-size: 50pt;
+      font-size: 12pt;
+      padding-bottom: 20px;
   }
   
 
