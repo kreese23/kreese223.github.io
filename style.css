@@ -1,179 +1,311 @@
-*{
-    padding: 0;
+* {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    /* border-style: dashed; */
-    box-sizing: border-box;
-    }
+    padding: 0;
+}
 
-  body{
-    font-family: 'Playfair Display', serif;
-    background-image:url("assets/IMG_1837.jpg");
 
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* NAVBAR CSS */
+nav{
+    padding-left:4em;
+    padding-right: 4em;
+    /* TODO: figure out no longer staying fixed */
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    z-index:10;
   }
 
-  /* step two - build your grid desktop and tablet grid*/
-  .container {
-      background-color: rgba(253, 250, 250, 0.76);
-      height: 100%;
-      width: 90%;
-      margin: 0 auto;
-      display: grid;
-      grid-gap: 50px;
-      /* this will be  the same for everyone */
-      grid-template-columns: repeat(2, 1fr);
-      /* this will be customized, based on your grid, use pixels or % */
-      grid-template-rows: auto;
-      /* use letters from step 1 to build the grid */
-      grid-template-areas: 
-          "n n"        
-          "h h"
-          "e a"
-          "x a"
-          "x s"
-          ". s";
+  nav ul {
+    margin:0;
+    padding-top: 30px;
+    display:flex;
+  }
+  nav li{
+    padding: 1em 0;
+    list-style-type: none;
+    padding: 25px;
+    font-size: 1.7em;
   }
   
-  /* step three - build your mobile grid, what becomes active when the pixels are 800px or less */
-  @media screen and (max-width: 800px) {
-  
-      .container{
-          background-color: rgba(253, 250, 250, 0.952);
-          width: 85%;
-          display: grid;
-          grid-gap: 15px;
-          /* grid is only one column, keep this way */
-          grid-template-columns: 1fr;
-          /* you can enter values, or auto will adjust the box sizes based on content */
-          grid-template-rows: auto;
-          grid-template-areas:
-          "n"
-          "h"
-          "e"
-          "a"
-          "x"
-          "s";
-      }
+  nav li a {
+    color:rgb(163, 20, 1);
+    font-weight: 600;
+    opacity: 0.6;
+    text-decoration: none;
+    transition: .3s;
   }
   
-  /* step 1 - write in each of your sections and assign each of your sections a letter */
-/* navigation styling */
-  nav{
-      padding-top: 20px;
-      grid-area: n;
-      display: inline;
-      text-align: center;
-    }
+  nav li a:hover {
+    color:rgb(228, 228, 228);
+    opacity: 1;
+    text-decoration: none;
+  }
 
-nav a{
+  /* HEADER CSS */
+.header {
+    position: relative;
+    background-image: url(/images/cover-image.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-color: antiquewhite;
+}
+
+
+.welcome{
+    margin-top: 25vh;
+    text-align: center;
+    font-weight: 500;
+    font-size:4em;
+    color: rgb(255, 251, 251)}
+
+#changingword {
+    color:rgb(215, 0, 0);
+      } 
+
+/* IMAGE GALLERY CSS */
+.image-gallery {
+    height: 100%;
+    display: grid;
+    background-image: url(/images/backgrnd2.jpg);
+    background-color: rgb(247, 239, 239);
+    grid-template-columns: 1fr minmax(350px, 1fr)  minmax(350px, 1fr) minmax(350px, 1fr) 1fr;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    grid-template-areas:
+    ". a b c ."
+    ". d e f ."
+    ;
+}
+
+.box-styling {
+    height: 350px;
+    background-color: rgb(110, 110, 110);
+    /* clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); */
+  }
+
+.box-wrapper{
+  height:350px;
+  border-radius: 20%;
+}
+.box1 {
+    grid-area: a;
+    /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+
+}
+
+.box2 {
+    grid-area: b;
+}
+
+.box3 {
+    grid-area: c;
+}
+
+.box4 {
+    grid-area: d;
+}
+
+.box5 {
+    grid-area: e;
+}
+
+.box6 {
+    grid-area: f;
+}
+
+.bigText {
+    font-size: 2em;
+    padding-right: .5ch;
+}
+
+
+/* ABOUT ME CSS*/
+.about-me {
+    height: 100vh !important;
+    background-image: url(/images/IMG_0795.JPG);
+    background-color: rgb(165, 141, 141) !important;
+    padding: 20vh 50px 0 50px;
+    column-count: 2;
+}
+
+.about-me {
+  grid-area: content;
+  /* max-width: 600px; */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-me img{
+  width: 2%;
+  border-radius: 8%;
+  margin-bottom: 2em;
+  margin-right: 40%;
+}
+
+.about-me p{
+  text-align: left;
+  font-size: 2.5m;
+  line-height: 3em;
+}
+
+.about-me img{
+  width: 100%;
+  border-radius: 8%;
+  margin-bottom: 4em;
+}
+
+.about-me p{
+  text-align: left;
+  font-size:1.2em;
+  line-height: 2rem;
+}
+.paragraph2{
+  text-indent: 2em;
+}
+/* the span tag that wrap starts off my paragraph */
+.bigText {
+  font-size:2em;
+  padding-right:.5em;
+}
+
+/* CONTACT CSS */
+.contact {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 25vh !important;
+    padding-bottom: 50vh;
+    background-color: rgb(194, 190, 185) !important;
+    grid-template-columns: 3fr minmax(2fr, 1fr) minmax(2fr, 1fr) 3fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    ". title title ."
+    ". logo wrapper ."
+    ;
+}
+
+.contact-title {
+    font-size: 3em;
+    color: rgb(232, 13, 13);
+    grid-area: title;
+    padding-bottom: 40px;
+}
+
+.contact p{
+  font-size: 2.2em;
+  color: rgb(232, 13, 13);
+  padding-top: 40px;
+}
+
+.logo-svg {
+    width: 200px;
+    grid-area: logo;
+}
+
+.contact-wrapper {
+    grid-area: wrapper;
+}
+
+
+   /* footer section */
+   footer{
+    grid-area:footer;
+    background-image: url(/images/IMG_0455.jpg)
+  }
+  footer p{
+    font-size:2em;
+  }
+  footer li {
+    display:inline;
+  }
+  footer ul {
+    max-width: 640px;
+    margin: 2em auto;
+    padding:0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+  }
+  footer ul li{
+    list-style: none;
+    align-self:flex-end;
+  }
+  footer ul li a {
+    text-decoration:none;
+    color: rgb(8, 8, 8);
+    transition: .2s;
+  }
+  footer ul li a:hover {
+    text-decoration:none;
+    color:rgb(163, 20, 1);
+  }
+  footer svg {
+    width:20%;
+  }
+  footer p{
     font-size: 1em;
-    padding: 29px;
+  }
+
+
+
+  /* MEDIA QUERY FOR SMALL SCREENS */
+ @media (max-width:1100px){
+    .image-gallery {
+      padding-top: 50px;
+      padding-bottom: 0px;
+        margin-bottom: 600px;
+        grid-template-columns: 1fr minmax(350px, 1fr) minmax(350px, 1fr) 1fr;
+        grid-template-areas:
+        ". a b ."
+        ". c d ."
+        ". e f ."
+        ;
     }
-    /* unvisited link */
-a:link {
-    color: #000000;
-    text-decoration: none;
-  }
-  /* visited link */
-  a:visited {
-    color: #b7b7d1;
-    text-decoration: none;
-  }
-  /* mouse over link */
-  a:hover {
-    color: #d8350c;
-    text-decoration: underline;
+ }
 
-  }
-  /* selected link */
-  a:active {
-    color: #0000FF;
-    text-decoration: none;
-  }
-  .left{
-      float: left;
-  }
-  .right{
-      float: right;
-  }
+/* MEDIA QUERY FOR MOBILE */
+ @media (max-width:735px){
+     nav {
+         padding-left: 0px;
+     }
 
-  header {
-      grid-area: h;
-      padding-top: 10px;
+    .image-gallery {
+        padding-top: 60%;
+        padding-bottom: 200%;
+        grid-template-columns: 1fr minmax(400px, 1fr) 1fr;
+        grid-template-areas:
+        ".a."
+        ".b."
+        ".c."
+        ".d."
+        ".e."
+        ".f."
+        ;
+    }
+
+    .contact {
+        padding-bottom: 200%;
+        grid-template-columns: 3fr minmax(2fr, 1fr) 3fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        ". title ."
+        ". logo ."
+        ". wrapper ."
+        ;
+    }
     
-  }
-  
-  .education {
-      grid-area: e;
-      padding-top: 12px;
-  }
-  
-  .experience {
-      grid-area: x;
-  }
-
-  .awards {
-      grid-area: a;
-      padding-right: 10px;
-  }
-
-  .skills {
-      grid-area: s;
-      padding-bottom: 50px;
-  }
-  
-  h1{
-      font-family: 'Chivo', sans-serif;;
-      font-size: 20pt;
-  }
-
-  h2{
-      font-family: 'Chivo', sans-serif;
-      font-size: 20pt;
-  }
-
-  h3{
-      font-family: 'Arimo';
-      font-size: 15pt;
-  }
-
-  h4{
-      font-family: 'Chivo' , sans-serif;
-      font-size: 15pt;
-  }
-
-  h5{
-      font-size: 10pt;
-      font-family: 'Chivo' , sans-serif;
-  }
-
-  .p{
-      font-family: 'Arimo';
-      font-size: 12pt;
-  }
-
-  li{
-      font-family: 'Arimo';
-      font-size: 12pt;
-      padding-bottom: 20px;
-  }
-  
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
+ }
 
 
 
